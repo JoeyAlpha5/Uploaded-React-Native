@@ -1,27 +1,11 @@
 import React from 'react';
-import {SafeAreaView,StyleSheet,ScrollView,View,Text,StatusBar,Image} from 'react-native';
-import {Header,LearnMoreLinks,Colors,DebugInstructions,ReloadInstructions,} from 'react-native/Libraries/NewAppScreen';
-const AppHeader =(props) => {
+import {SafeAreaView,Animated,StyleSheet,ScrollView,View,Text,StatusBar,Image} from 'react-native';
+export const AppHeader =(props) => {
   return (
-      <View style={styles.header}>
-        <Text style={styles.text}>{props.title}</Text>
-      </View>
+      <Animated.View style={{alignSelf:'flex-start',display:props.display}}>
+        <Text style={{color:'white',fontSize:24,fontWeight:'700',alignSelf:'flex-start',marginLeft:15,marginTop:20}}>{props.title}</Text>
+  <Text style={{color:'white',fontSize:15,alignSelf:'flex-start',marginLeft:15,marginTop:5}}>{props.subtitle}</Text>
+      </Animated.View>
   );
 };
 
-const styles = StyleSheet.create({
-  header: {
-    height:60,
-    padding:15,
-    backgroundColor:'#000000',
-  },
-  text:{
-    color:'#ffffff',
-    fontSize:20,
-    textAlign:'left',
-    marginLeft:15,
-  }
-
-});
-
-export default AppHeader;
